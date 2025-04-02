@@ -21,20 +21,18 @@ datepicker = DatePicker()
 async def start(message: Message):
     
     await message.answer(
-        'Select date:', 
+        'Select date:',
         reply_markup=await datepicker.start_calendar()
     )
 
 
 @dp.callback_query(DpCallback.filter())
 async def process_dialog_calendar(
-  callback: CallbackQuery, callback_data: DpCallback
-  ):
+    callback: CallbackQuery, callback_data: DpCallback
+):
     date = await datepicker.process_selection(callback, callback_data)
     if date:
-      
-      await callback.message.edit_text(f"Selected date {date} ✅")
-    print(callback_data)
+        await callback.message.edit_text(f"Selected date {date} ✅")
 
 
 

@@ -30,8 +30,8 @@ class DatePicker:
       dateFormat:str = "%d.%m.%Y",
       yearRange=120,
       confirmButton: str = 'Confirm ✅',
-      selectionFormat:Optional[str] = '〔{}〕',
-      predifined:Optional[datetime] = None,
+      selectionFormat:Optional[str] = '∙{}∙',
+      predefined:Optional[datetime] = None,
   ):
     self.placeholder = placeholder
     self.oneTap = oneTap
@@ -45,7 +45,7 @@ class DatePicker:
     self.emptyButton = emptyButton
     self.confirmButton = confirmButton
     self.selectionFormat = selectionFormat
-    self.predifined = predifined
+    self.predefined = predefined
 
 
   async def start_calendar(
@@ -59,10 +59,10 @@ class DatePicker:
     lc.setlocale(lc.LC_ALL, self.locale)
     calendar.setfirstweekday(self.firstweekday)
 
-    if not selected_date and self.predifined:
-      selected_date = datetime.strftime(self.predifined, self.dateFormat)
-      year=self.predifined.year
-      month=self.predifined.month
+    if not selected_date and self.predefined:
+      selected_date = datetime.strftime(self.predefined, self.dateFormat)
+      year=self.predefined.year
+      month=self.predefined.month
 
     cal = calendar.monthcalendar(year, month)
 
