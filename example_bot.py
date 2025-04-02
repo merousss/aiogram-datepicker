@@ -15,7 +15,16 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
 
-datepicker = DatePicker()
+datepicker = DatePicker(
+    locale="ru_RU",
+    blockedDays=[datetime.now().date()],
+    blockedButton="⛔",
+    controlButtons=["⬅", "➡"],
+    confirmButton="Confiiiiiirm📌",
+    dateFormat="%Y-%m-%d",
+    selectionFormat="🍔{}",
+    placeholder="✨Your star day is "
+)
 
 
 @dp.message(Command(commands=['start']))    # start command
