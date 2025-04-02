@@ -1,7 +1,8 @@
 # aiogram3 Datepicker
 A simple datepicker built on telegram inline keyboard.
-
+![til](img/gif1.gif)
 ## Usage
+
 ### Basic usage
 ```python
 from datepicker import DatePicker, DpCallback
