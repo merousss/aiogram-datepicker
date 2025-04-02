@@ -29,14 +29,13 @@ async def process_dialog_calendar(
 
 To change the language in which the months and days of the week of the calendar will be written, you need to change the attribute of the Datepicker() class.
 [locale docs](https://docs.python.org/3/library/locale.html)
-
+![til](img/locale.png)
 ```python
 datepicker=Datepicker(locale="fr_FR") # "en_US" by default
 ```
-![til](img/locale.png)
 
 ### Blocked Days
-
+![til](img/blocked.png)
 You can pass to the blockedDays class attribute dates that you don't want to process or you want to visually hide them
 ```python
 datepicker = DatePicker(
@@ -50,11 +49,14 @@ datepicker.blockedDays.extend([datetime(2025,4,14).date(), datetime(2025,4,15).d
 ```
 > Warning: Dates must be in datetime.date() format
 
-![til](img/blocked.png)
-
 ### First day of the week
-You can change which day the week starts with by using the **firstweekday** attribute
 ![til](img/weekday.png)
+You can change which day the week starts with by using the **firstweekday** attribute
+```python
+datepicker = DatePicker(
+    firstweekday=6 #Sunday
+)
+```
 
 ###Customization
 ![til](img/custom.png)
