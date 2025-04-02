@@ -29,6 +29,7 @@ async def process_dialog_calendar(
 
 To change the language in which the months and days of the week of the calendar will be written, you need to change the attribute of the Datepicker() class.
 [locale docs](https://docs.python.org/3/library/locale.html)
+
 ![til](img/locale.png)
 
 ```python
