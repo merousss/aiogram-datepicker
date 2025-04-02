@@ -49,6 +49,7 @@ datepicker.blockedDays.append(datetime(2025,4,3).date())
 datepicker.blockedDays.extend([datetime(2025,4,14).date(), datetime(2025,4,15).date()])
 ```
 > Warning: Dates must be in datetime.date() format
+
 ![til](img/blocked.png)
 ## Datepicker attributes
 ```python
