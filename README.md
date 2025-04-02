@@ -39,7 +39,7 @@ datepicker=Datepicker(
 
 
 |Attribute|Type |Description|Default|
-|-|-|-||
+|---|---|---|---|
 |placeholder| string | Displays text before the date, when the oneTap attribute is disabled|"📆 Selected date: "
 |oneTap| bool|If true removes the confirmation button and does not change the message text in the format ‘{placeholder} + {date}’  |"False"
 | locale| string | Changes the locale of datepicker | "en_US"
