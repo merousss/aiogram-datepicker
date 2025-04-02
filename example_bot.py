@@ -21,8 +21,6 @@ datepicker = DatePicker()
 @dp.message(Command(commands=['start']))    # start command
 async def start(message: Message):
     
-
-
     await message.answer(
         'Select date:',
         reply_markup=await datepicker.start_calendar()
