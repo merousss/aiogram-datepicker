@@ -64,7 +64,7 @@ datepicker = DatePicker(
 )
 ```
 ***
-###Customization
+### Customization
 ![til](img/custom.png)
 
 ```python
