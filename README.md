@@ -1,5 +1,6 @@
 # aiogram3 Datepicker
 A simple datepicker built on telegram inline keyboard.
+
 ![til](img/gif1.gif)
 ## Usage
 
@@ -24,7 +25,7 @@ async def process_dialog_calendar(
     if date:
         await callback.message.edit_text(f"Selected date {date} ✅")
 ```
-
+***
 ### Localization
 
 To change the language in which the months and days of the week of the calendar will be written, you need to change the attribute of the Datepicker() class.
@@ -35,7 +36,7 @@ To change the language in which the months and days of the week of the calendar 
 ```python
 datepicker=Datepicker(locale="fr_FR") # "en_US" by default
 ```
-
+***
 ### Blocked Days
 ![til](img/blocked.png)
 
@@ -51,7 +52,7 @@ datepicker.blockedDays.append(datetime(2025,4,3).date())
 datepicker.blockedDays.extend([datetime(2025,4,14).date(), datetime(2025,4,15).date()])
 ```
 > Warning: Dates must be in datetime.date() format
-
+***
 ### First day of the week
 ![til](img/weekday.png)
 
@@ -62,7 +63,7 @@ datepicker = DatePicker(
     firstweekday=6 #Sunday
 )
 ```
-
+***
 ###Customization
 ![til](img/custom.png)
 
@@ -93,5 +94,5 @@ datepicker = DatePicker(
 | dateFormat | string | Output value date [format](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) | "%d.%m.%Y"
 | yearRange | int | Date display boundaries based on the current year | 120
 | confirmButton | string | Appearance of the confirmation button | "Confirm ✅"
-| selectionFormat | string | Selected day/month/year [format](https://docs.python.org/3/library/stdtypes.html#str.format) |  "〔{}〕"
+| selectionFormat | string | Selected day/month/year [format](https://docs.python.org/3/library/stdtypes.html#str.format) |  "∙{}∙"
 | predefined| datetime | Predefined date when datepicker is opened | None
