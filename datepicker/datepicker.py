@@ -26,6 +26,8 @@ class DatePicker:
       controlButtons=["<<", ">>"],
       blockedDays = [],
       blockedButton:str = '❌',
+      markedDays = [],
+      markedFormat:str = '📌',
       emptyButton:str = 'ㅤ',
       dateFormat:str = "%d.%m.%Y",
       yearRange=120,
@@ -40,6 +42,8 @@ class DatePicker:
     self.controlButtons = controlButtons
     self.blockedDays = blockedDays
     self.blockedButton = blockedButton
+    self.markedDays = markedDays
+    self.markedFormat = markedFormat
     self.dateFormat = dateFormat
     self.yearRange = abs(yearRange)
     self.emptyButton = emptyButton
@@ -107,6 +111,9 @@ class DatePicker:
           elif datetime(year, month, day).date() in self.blockedDays:
             action = "blocked"
             text = self.blockedButton
+          elif datetime(year, month, day).date() in self.markedDays:
+            action = "marked"
+            text = self.markedFormat.format(day)
 
           date = datetime.strftime(datetime(year, month, day), self.dateFormat) if action != "ignore" else None
           
@@ -227,7 +234,7 @@ class DatePicker:
     date = None
     result = None
 
-    if callback_data.action == "select":
+    if callback_data.action == "select" or "marked":
       date = callback_data.date
       if self.oneTap == False:
         try:
