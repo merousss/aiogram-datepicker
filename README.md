@@ -54,7 +54,7 @@ datepicker.blockedDays.extend([datetime(2025,4,14).date(), datetime(2025,4,15).d
 > Warning: Dates must be in datetime.date() format
 ***
 ### Marked Days
-![til](img/blocked.png)
+![til](img/marked.png)
 
 You can pass to the markedDays class attribute dates that you want to visually highlight
 ```python
