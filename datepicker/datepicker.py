@@ -27,7 +27,7 @@ class DatePicker:
       blockedDays = [],
       blockedButton:str = '❌',
       markedDays = [],
-      markedFormat:str = '📌',
+      markedFormat:str = '📌{}',
       emptyButton:str = 'ㅤ',
       dateFormat:str = "%d.%m.%Y",
       yearRange=120,
