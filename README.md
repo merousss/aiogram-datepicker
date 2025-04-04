@@ -53,6 +53,22 @@ datepicker.blockedDays.extend([datetime(2025,4,14).date(), datetime(2025,4,15).d
 ```
 > Warning: Dates must be in datetime.date() format
 ***
+### Marked Days
+![til](img/blocked.png)
+
+You can pass to the markedDays class attribute dates that you want to visually highlight
+```python
+datepicker = DatePicker(
+    markedDays=[datetime.now().date()]
+)
+
+#or use append/extend instead
+
+datepicker.markedDays.append(datetime.now().date())
+datepicker.markedDays.extend([datetime.now().date(), ...])
+```
+> Warning: Dates must be in datetime.date() format
+***
 ### First day of the week
 ![til](img/weekday.png)
 
@@ -90,6 +106,8 @@ datepicker = DatePicker(
 | controlButtons | list[str, str] | Appearance of the control buttons | ["<<", ">>"]
 | blockedDays | list[datetime.date()] | List of days that cannot be selected | [ ]
 | blockedButton | string | Appearance of the button with blocked days | "❌"
+| markedDays | list[datetime.date()] | List of days that you want to visually highlight | [ ]
+| markedFormat | string | Marked buttons [format](https://docs.python.org/3/library/stdtypes.html#str.format)  | "📌{}"
 | emptyButton | string | Appearance of an empty button | "ㅤ" (u+3164)
 | dateFormat | string | Output value date [format](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) | "%d.%m.%Y"
 | yearRange | int | Date display boundaries based on the current year | 120
